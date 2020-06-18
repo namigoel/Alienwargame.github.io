@@ -1,6 +1,7 @@
 <html>
 
 <head>
+	Come let's play
 </head>
 
 <body>
@@ -13,21 +14,17 @@
 	<marquee><i>By Namisha Goyal</i></marquee>
 	<script>
 		
-		// Adding fire 
-		// Generate in 300 ms
-		// Add in update !
-
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
 
 		var counter = 0;
 
 		function drawObject(object){
-			//Find current index of image to be used.
+			
 			var currentImageIndex = counter%object.images.length;
-			//Access image from array of images
+			
 			var currentImage = object.images[currentImageIndex];
-			//Draw of canvas
+			
 			ctx.drawImage(currentImage,object.x-(object.width/2),object.y-(object.height/2),object.width,object.height);
 		}
 
@@ -184,18 +181,12 @@
 																				} 
 																			}
 		};
-
-		//step 2
 		function handleKey(event, status) {
 			var currentController = keyMap[event.keyCode];
 			if(!!currentController){
 				currentController.active = status;
 			}
 		}
-
-
-        // Play music on loop 
-        // Music credits to Alan Walker ;)
     	var isPlayingMusic = false; 
         function playMusicNow(){
         	isPlayingMusic = true;
@@ -207,9 +198,6 @@
 
 	        audio.play();
         }
-
-
-
 		document.addEventListener("keydown", function(event) {
 			if(!isPlayingMusic) playMusicNow();
 		    handleKey(event, true);
